@@ -46,6 +46,17 @@ const movieList = (state =movie_list(), action) => {
      });
      return {...new_state} ;
     }
+
+  case 'SEARCH_MOVIE': {
+
+     var new_state={...state };
+     new_state.searched=new_state.list
+     .filter(function(movie){
+        return movie.title.toLowerCase().indexOf(action.search.toLowerCase())!=-1;
+     });
+     return {...new_state} ;
+    }
+  
   
   
     case 'LOAD_SELECTED_MOVIE': {

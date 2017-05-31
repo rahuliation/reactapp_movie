@@ -11,6 +11,7 @@ export const movie_list=function () {
     movies: {
       load: true,
       selected:{},
+      searched:[],
       next_rank: parseInt(movies[movies.length-1].rank)+1,
       list: movies
     }});
@@ -20,5 +21,5 @@ export const movie_list=function () {
       console.log(error);
     });
 
-    return {selected:{}, load:false, list:[]};
+    return {selected:{}, searched:[], load:false, list:[]};
 };
